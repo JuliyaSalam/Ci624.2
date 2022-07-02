@@ -22,6 +22,8 @@ public class LimMaxTest {
         transferPage.transfer(11_000, 1);
         $x(".//div[@class=\"notification__content\"]").shouldHave(exactText("Ошибка!"));
 
-
+        dashboardPage.transferClick(1);
+        transferPage.transfer(11_000, 0);
+        $x(".//div[@class=\"notification__content\"]").shouldHave(exactText("Ошибка!"));
     }
 }
