@@ -20,10 +20,10 @@ public class LimMaxTest {
 
         var transferPage = dashboardPage.transferClick(0);
         transferPage.transfer(11_000, 1);
-        $x(".//div[@class=\"notification__content\"]").shouldHave(exactText("Ошибка!"));
+        transferPage.error();
 
         dashboardPage.transferClick(1);
         transferPage.transfer(11_000, 0);
-        $x(".//div[@class=\"notification__content\"]").shouldHave(exactText("Ошибка!"));
+        transferPage.error();
     }
 }
